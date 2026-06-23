@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Walterdes Júnior — Software Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+
+<!-- ━━ CURSOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="cur"></div>
+<div id="cur-r"></div>
+
+<!-- ━━ WELCOME SCREEN ━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="welcome">
+  <div class="wc-bg"></div>
+  <div class="wc-grid"></div>
+  <div class="wc-inner">
+    <div class="wc-term">
+      <div class="wc-term-bar">
+        <span class="wc-term-dot wc-term-dot--r"></span>
+        <span class="wc-term-dot wc-term-dot--y"></span>
+        <span class="wc-term-dot wc-term-dot--g"></span>
+        <span class="wc-term-name">walterdes@portfolio — zsh</span>
+      </div>
+      <div class="wc-term-body">
+        <div class="wc-term-line">
+          <span class="wc-prompt">➜</span>
+          <span class="wc-cmd" id="wc-cmd"></span><span class="wc-caret" id="wc-caret"></span>
+        </div>
+        <div class="wc-term-out" id="wc-out"></div>
+      </div>
+      <div class="wc-progress"><div class="wc-progress-bar" id="wc-progress-bar"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ━━ ANIMATED BG ━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="bg-fixed" aria-hidden="true">
+  <div class="blob blob-1" id="blob1"></div>
+  <div class="blob blob-2" id="blob2"></div>
+  <div class="blob blob-3" id="blob3"></div>
+  <div class="blob blob-4" id="blob4"></div>
+</div>
+<div id="bg-grid" aria-hidden="true"></div>
+
+<!-- ━━ NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<nav id="navbar">
+  <a href="#Home" class="nav-brand">Walterdes</a>
+  <ul class="nav-links">
+    <li><a href="#Home"      data-s="Home"      class="active">Home</a></li>
+    <li><a href="#About"     data-s="About">About</a></li>
+    <li><a href="#Portofolio" data-s="Portofolio">Portfolio</a></li>
+    <li><a href="#Contact"   data-s="Contact">Contact</a></li>
+  </ul>
+  <button class="nav-ham" id="ham-btn" aria-label="Menu">
+    <span class="ham-bar"></span>
+    <span class="ham-bar"></span>
+    <span class="ham-bar"></span>
+  </button>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mob-menu" id="mob-menu">
+  <a href="#Home"       onclick="closeMob()">Home</a>
+  <a href="#About"      onclick="closeMob()">About</a>
+  <a href="#Portofolio" onclick="closeMob()">Portfolio</a>
+  <a href="#Contact"    onclick="closeMob()">Contact</a>
+</div>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HOME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="Home">
+  <div class="home-grid">
+
+    <!-- Left -->
+    <div data-aos="fade-right" data-aos-delay="200">
+      <!-- Status badge -->
+      <div class="status-badge" data-aos="zoom-in" data-aos-delay="400">
+        <div class="status-inner">
+          <div class="status-pill">
+            <span class="live-dot"></span>
+            <span class="status-text">Aberto a Propostas</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heading -->
+      <div class="home-heading" data-aos="fade-up" data-aos-delay="600">
+        <h1>
+          <span class="h-line1">Software</span><br>
+          <span class="h-line2">Engineer</span>
+        </h1>
+      </div>
+
+      <!-- Typewriter -->
+      <div class="typewriter-wrap" data-aos="fade-up" data-aos-delay="800">
+        <span class="typewriter-text" id="tw-text"></span>
+        <span class="tw-cursor"></span>
+      </div>
+
+      <!-- Desc -->
+      <p class="home-desc" data-aos="fade-up" data-aos-delay="1000">
+        Criando soluções digitais inovadoras, funcionais e centradas no usuário. Full Stack · Mobile · Cloud.
+      </p>
+
+      <!-- Tech pills -->
+      <div class="tech-pills" data-aos="fade-up" data-aos-delay="1200">
+        <span class="t-pill">HTML/CSS/JS</span>
+        <span class="t-pill">Flutter/Dart</span>
+        <span class="t-pill">Python/Java</span>
+        <span class="t-pill">AWS Cloud</span>
+      </div>
+
+      <!-- CTAs -->
+      <div class="cta-row" data-aos="fade-up" data-aos-delay="1400">
+        <a href="#Portofolio" class="btn-cta">
+          <div class="btn-inner">
+            <span class="btn-txt">Projetos</span>
+            <span class="btn-ico">↗</span>
+          </div>
+        </a>
+        <a href="#Contact" class="btn-cta contact">
+          <div class="btn-inner">
+            <span class="btn-txt">Contato</span>
+            <span class="btn-ico">✉</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Socials -->
+      <div class="social-row" data-aos="fade-up" data-aos-delay="1600">
+        <a href="https://github.com/WalterdesJunior" target="_blank" class="soc-btn" aria-label="GitHub">
+          <div class="soc-btn-inner"><span class="soc-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1.01-.32 3.3 1.23A11.5 11.5 0 0 1 12 5.8c1.02.005 2.05.138 3.01.404 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </span></div>
+        </a>
+        <a href="https://www.linkedin.com/in/walterdes-junior-4a8791313/" target="_blank" class="soc-btn" aria-label="LinkedIn">
+          <div class="soc-btn-inner"><span class="soc-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </span></div>
+        </a>
+        <a href="mailto:walterdinhojuninho@gmail.com" class="soc-btn" aria-label="Email">
+          <div class="soc-btn-inner"><span class="soc-ico">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          </span></div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right — illustration -->
+    <div class="home-right" data-aos="fade-left" data-aos-delay="600">
+      <div class="illus-wrap" id="illus">
+        <div class="illus-glow"></div>
+        <div class="dev-svg-wrap" id="devWrap">
+          <!-- floating chips -->
+          <div class="float-chip fc1"><span class="fc-ico">☁</span>AWS Certified</div>
+          <div class="float-chip fc2"><span class="fc-ico">🔷</span>Flutter Dev</div>
+          <div class="float-chip fc3"><span class="fc-ico">⌨</span>Full Stack</div>
+
+          <!-- editor window -->
+          <div class="editor-window" id="editorWindow">
+            <div class="editor-topbar">
+              <div class="editor-dots">
+                <span class="mdot mdot-r"></span>
+                <span class="mdot mdot-y"></span>
+                <span class="mdot mdot-g"></span>
+              </div>
+              <div class="editor-tabs">
+                <span class="editor-tab active">walterdes.ts</span>
+                <span class="editor-tab">package.json</span>
+              </div>
+            </div>
+            <div class="editor-body">
+              <div class="monitor-code">
+                <div class="code-line"><span class="code-ln">1</span><span class="kw">const</span> <span class="fn">walterdes</span> <span class="punct">=</span> <span class="punct">{</span></div>
+                <div class="code-line"><span class="code-ln">2</span>&nbsp;&nbsp;<span class="fn">role</span><span class="punct">:</span> <span class="str">"Software Engineer"</span><span class="punct">,</span></div>
+                <div class="code-line"><span class="code-ln">3</span>&nbsp;&nbsp;<span class="fn">stack</span><span class="punct">:</span> <span class="punct">[</span><span class="str">"Web"</span><span class="punct">,</span> <span class="str">"Mobile"</span><span class="punct">],</span></div>
+                <div class="code-line"><span class="code-ln">4</span>&nbsp;&nbsp;<span class="fn">cloud</span><span class="punct">:</span> <span class="str">"AWS"</span><span class="punct">,</span></div>
+                <div class="code-line"><span class="code-ln">5</span>&nbsp;&nbsp;<span class="fn">open</span><span class="punct">:</span> <span class="kw">true</span> <span class="cm">// para propostas</span></div>
+                <div class="code-line"><span class="code-ln">6</span><span class="punct">};</span></div>
+                <div class="code-line"><span class="code-ln">7</span>&nbsp;</div>
+                <div class="code-line"><span class="code-ln">8</span><span class="kw">export</span> <span class="kw">default</span> <span class="fn">walterdes</span><span class="code-cursor"></span></div>
+              </div>
+            </div>
+            <div class="editor-statusbar">
+              <span class="esb-dot"></span> build passou · 0 erros
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <a href="#About" class="scroll-hint" aria-label="Rolar para baixo"></a>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ABOUT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="About">
+  <div class="sec-header">
+    <h2 class="sec-title" data-aos="zoom-in-up" data-aos-duration="600">About Me</h2>
+    <p class="sec-sub" data-aos="zoom-in-up" data-aos-duration="800">
+      <span class="sec-sub-icon">✨</span>
+      Quem é o desenvolvedor por trás dos projetos
+      <span class="sec-sub-icon">✨</span>
+    </p>
+  </div>
+
+  <div class="about-grid">
+    <!-- Photo -->
+    <div class="about-photo-col" data-aos="fade-up" data-aos-duration="1000">
+      <div class="photo-ring-outer">
+        <div class="photo-circle">
+          <img src="assets/img/profile.jpeg" alt="Walterdes Júnior"/>
+          <div class="photo-shimmer"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text -->
+    <div class="about-text-col">
+      <span class="about-path" data-aos="fade-right" data-aos-duration="800">~/about<span class="about-path-sep">/</span><span class="about-path-file">profile.json</span></span>
+      <h2 class="about-hello" data-aos="fade-right" data-aos-duration="1000">
+        <span class="ah-grad">Olá, eu sou</span>
+      </h2>
+      <span class="about-name" data-aos="fade-right" data-aos-duration="1300">Walterdes Júnior</span>
+      <p class="about-desc" data-aos="fade-right" data-aos-duration="1500">
+        Estudante de Engenharia de Software (6° período) na Faculdade ICEV, com foco em desenvolvimento <span class="about-hl">Full Stack</span>.
+        Experiência prática em projetos web e mobile utilizando HTML, CSS, JavaScript, Flutter/Dart e Python.
+        Certificado em <span class="about-hl">AWS Cloud</span> Foundations e Cloud Developing.
+      </p>
+
+      <div class="about-note" data-aos="fade-up" data-aos-duration="1700">
+        <div class="about-note-bar">
+          <span class="an-dot"></span><span class="an-dot"></span><span class="an-dot"></span>
+          <span class="about-note-label">notes.md</span>
+        </div>
+        <p class="about-note-txt"><span class="an-quote-mark">//</span>Transformando lógica em código, e código em soluções que fazem a diferença.<span class="an-caret"></span></p>
+      </div>
+
+      <div class="about-btns" data-aos="fade-up" data-aos-duration="800">
+        <a href="assets/cv/Walterdes-Junior-CV.pdf" download="Walterdes-Junior-CV.pdf" class="btn-about-main">📄 Download CV</a>
+        <a href="#Portofolio" class="btn-about-sec">⌨ Ver Projetos</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metrics strip -->
+  <div class="about-metrics" data-aos="fade-up" data-aos-duration="1300">
+    <div class="metric-item">
+      <div class="metric-top">
+        <span class="metric-ico">⌨</span>
+        <span class="metric-num">7</span>
+      </div>
+      <div class="metric-label">Projetos</div>
+      <div class="metric-sub">Soluções inovadoras criadas</div>
+    </div>
+    <div class="metric-div"></div>
+    <div class="metric-item">
+      <div class="metric-top">
+        <span class="metric-ico">🏅</span>
+        <span class="metric-num">3</span>
+      </div>
+      <div class="metric-label">Certificações AWS</div>
+      <div class="metric-sub">Habilidades validadas</div>
+    </div>
+    <div class="metric-div"></div>
+    <div class="metric-item">
+      <div class="metric-top">
+        <span class="metric-ico">🌐</span>
+        <span class="metric-num">3+</span>
+      </div>
+      <div class="metric-label">Anos de Experiência</div>
+      <div class="metric-sub">Aprendizado contínuo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   PORTFOLIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="Portofolio">
+  <div class="sec-header" data-aos="fade-up" data-aos-duration="1000">
+    <h2 class="sec-title">Portfolio Showcase</h2>
+    <p class="sec-sub">Explore minha jornada por projetos, certificações e expertise técnica.</p>
+  </div>
+
+  <div class="port-appbar">
+    <div class="port-tabs">
+      <button class="ptab active" onclick="switchTab('projects',this)">
+        <span class="tab-ico">⌨</span>Projects
+      </button>
+      <button class="ptab" onclick="switchTab('certs',this)">
+        <span class="tab-ico">🏅</span>Certificates
+      </button>
+      <button class="ptab" onclick="switchTab('stack',this)">
+        <span class="tab-ico">📦</span>Tech Stack
+      </button>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="tab-pane active" id="tab-projects">
+    <div class="proj-grid" id="proj-grid">
+
+      <div class="proj-card" data-aos="fade-up-right" data-aos-duration="1000">
+        <div class="proj-card-grad"></div>
+        <div class="proj-inner">
+          <div class="proj-thumb proj-thumb--trio">
+            <div class="proj-thumb-overlay"></div>
+            <div class="trio-shape-a"></div>
+            <div class="trio-shape-b"></div>
+            <div class="trio-phones">
+              <div class="trio-phone trio-phone--side">
+                <div class="phone-frame-screen"><img src="assets/img/petzone/login.png" alt="PetZone — tela de login" loading="lazy"/></div>
+              </div>
+              <div class="trio-phone trio-phone--center">
+                <div class="phone-frame-screen"><img src="assets/img/petzone/swipe.png" alt="PetZone — tela de swipe" loading="lazy"/></div>
+              </div>
+              <div class="trio-phone trio-phone--side">
+                <div class="phone-frame-screen"><img src="assets/img/petzone/matches.png" alt="PetZone — tela de matches" loading="lazy"/></div>
+              </div>
+            </div>
+          </div>
+          <h3 class="proj-name">PetZone — Tinder para Pets</h3>
+          <p class="proj-desc">App mobile React Native que conecta tutores de pets para passeios e brincadeiras, com swipe, match, chat em tempo real e geolocalização.</p>
+          <div class="proj-actions">
+            <a href="https://github.com/marcusviniciusend/PetZone" target="_blank" class="proj-live">GitHub ↗</a>
+            <button class="proj-details" onclick="openProject('petzone')">Detalhes →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up" data-aos-duration="1200">
+        <div class="proj-card-grad"></div>
+        <div class="proj-inner">
+          <div class="proj-thumb proj-thumb--shot">
+            <div class="proj-thumb-overlay"></div>
+            <span class="proj-dev-badge">Em Desenvolvimento</span>
+            <img src="assets/img/corretorpro/login.png" alt="Corretor PRO — tela de login" loading="lazy"/>
+          </div>
+          <h3 class="proj-name">Sistema de Gestão — Corretora de Seguros</h3>
+          <p class="proj-desc">CRM e backoffice em Flutter para corretora de seguros, com controle de apólices, renovações, sinistros e comissionamento. Em desenvolvimento.</p>
+          <div class="proj-actions">
+            <a href="https://github.com/WalterdesJunior/seguros-gestao-app" target="_blank" class="proj-live">GitHub ↗</a>
+            <button class="proj-details" onclick="openProject('segurosgestao')">Detalhes →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up-left" data-aos-duration="1000">
+        <div class="proj-card-grad"></div>
+        <div class="proj-inner">
+          <div class="proj-thumb proj-thumb--trio">
+            <div class="proj-thumb-overlay"></div>
+            <div class="trio-shape-a"></div>
+            <div class="trio-shape-b"></div>
+            <div class="trio-phones">
+              <div class="trio-phone trio-phone--side">
+                <div class="phone-frame-screen"><img src="assets/img/bookshelf/login.jpg" alt="BookShelf — tela de login" loading="lazy"/></div>
+              </div>
+              <div class="trio-phone trio-phone--center">
+                <div class="phone-frame-screen"><img src="assets/img/bookshelf/noticias.jpg" alt="BookShelf — tela de notícias" loading="lazy"/></div>
+              </div>
+              <div class="trio-phone trio-phone--side">
+                <div class="phone-frame-screen"><img src="assets/img/bookshelf/salvos.jpg" alt="BookShelf — tela de salvos" loading="lazy"/></div>
+              </div>
+            </div>
+          </div>
+          <h3 class="proj-name">BookShelf — Agregador de Notícias</h3>
+          <p class="proj-desc">App Flutter de notícias para estudantes universitários, com login, categorias, busca e leitura de artigos salvos.</p>
+          <div class="proj-actions">
+            <a href="https://github.com/WalterdesJunior/BOOKSHELF" target="_blank" class="proj-live">GitHub ↗</a>
+            <button class="proj-details" onclick="openProject('bookshelf')">Detalhes →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up-left" data-aos-duration="1000">
+        <div class="proj-card-grad"></div>
+        <div class="proj-inner">
+          <div class="proj-thumb proj-thumb--shot">
+            <div class="proj-thumb-overlay"></div>
+            <span class="proj-dev-badge">Em Desenvolvimento</span>
+            <img src="assets/img/webfinanças/dashboard.png" alt="FinControl — dashboard financeiro" loading="lazy"/>
+          </div>
+          <h3 class="proj-name">FinControl — App Web de Gestão Financeira com IA</h3>
+          <p class="proj-desc">App web em Next.js + Supabase para controle financeiro pessoal, com dashboard, transações e metas. Assistente de IA em desenvolvimento.</p>
+          <div class="proj-actions">
+            <a href="https://github.com/WalterdesJunior/APP-WEB-GEST-O-FINANCEIRA-COM-IA-INTEGRADA" target="_blank" class="proj-live">GitHub ↗</a>
+            <button class="proj-details" onclick="openProject('fincontrol')">Detalhes →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up-right" data-aos-duration="1000" id="proj-extra-1" style="display:none">
+        <div class="proj-card-grad"></div>
+        <div class="proj-inner">
+          <div class="proj-thumb proj-thumb--shot">
+            <div class="proj-thumb-overlay"></div>
+            <img src="assets/img/testesautomação/apitests.png" alt="Projeto de Testes e Automação — relatório de testes" loading="lazy"/>
+          </div>
+          <h3 class="proj-name">Projeto de Testes e Automação</h3>
+          <p class="proj-desc">Suíte de testes automatizados em Python com módulos de API (Petstore) e Web E2E (SauceDemo), Page Object Model e pipeline de CI/CD.</p>
+          <div class="proj-actions">
+            <a href="https://github.com/WalterdesJunior/testes-automacao" target="_blank" class="proj-live">GitHub ↗</a>
+            <button class="proj-details" onclick="openProject('automacao')">Detalhes →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up-right" data-aos-duration="1000" id="proj-extra-4" style="display:none">
+        <div class="proj-card-grad"></div>
+        <div class="proj-inner">
+          <div class="proj-thumb proj-thumb--shot">
+            <div class="proj-thumb-overlay"></div>
+            <img src="assets/img/simuladorcoletadelixo/mapa.png" alt="Simulador de Coleta de Lixo — visualização do mapa" loading="lazy"/>
+          </div>
+          <h3 class="proj-name">Simulador de Coleta de Lixo</h3>
+          <p class="proj-desc">Simulação Java com visualização gráfica em Swing da logística de coleta urbana, usando filas e listas encadeadas próprias.</p>
+          <div class="proj-actions">
+            <a href="https://github.com/WalterdesJunior/Simulador-de-Coleta-de-Lixo" target="_blank" class="proj-live">GitHub ↗</a>
+            <button class="proj-details" onclick="openProject('simulador')">Detalhes →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up" data-aos-duration="1200" id="proj-extra-5" style="display:none">
+        <div class="proj-card-grad"></div>
+        <div class="proj-inner">
+          <div class="proj-thumb proj-thumb--shot">
+            <div class="proj-thumb-overlay"></div>
+            <img src="assets/img/portfoliocorretora/image.png" alt="Landing Page — Corretora de Seguros, página inicial" loading="lazy"/>
+          </div>
+          <h3 class="proj-name">Landing Page — Corretora de Seguros</h3>
+          <p class="proj-desc">Página profissional e responsiva desenvolvida para a DM Corretora de Seguros com animações modernas.</p>
+          <div class="proj-actions">
+            <a href="https://walterdesjunior.github.io/PORTFOLIO-CORRETORADESEGUROS/" target="_blank" class="proj-live">Ver Site ↗</a>
+            <button class="proj-details" onclick="openProject('landing')">Detalhes →</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="toggle-btn" id="proj-toggle" onclick="toggleProjects()">
+      Ver Mais ↓
+    </button>
+  </div>
+
+  <!-- Certs -->
+  <div class="tab-pane" id="tab-certs">
+    <div class="cert-grid">
+      <div class="cert-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0" onclick="openCert('foundations')">
+        <div class="cert-img">
+          <img class="cert-photo" id="cert-thumb-foundations" src="assets/img/cert-foundations.jpg" alt="AWS Foundations" onerror="this.style.display='none';document.getElementById('cert-emoji-foundations').style.display='block'"/>
+          <span id="cert-emoji-foundations" style="display:none">☁️</span>
+          <div class="cert-img-overlay">
+            <span class="cert-view-icon">👁</span>
+            <span class="cert-view-txt">Ver Certificado</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-name">AWS Academy Cloud Foundations</div>
+          <p class="cert-desc">Certificação em fundamentos de computação em nuvem pela Amazon Web Services Academy.</p>
+        </div>
+      </div>
+      <div class="cert-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" onclick="openCert('developing')">
+        <div class="cert-img">
+          <img class="cert-photo" id="cert-thumb-developing" src="assets/img/cert-developing.jpg" alt="AWS Developing" onerror="this.style.display='none';document.getElementById('cert-emoji-developing').style.display='block'"/>
+          <span id="cert-emoji-developing" style="display:none">⚙️</span>
+          <div class="cert-img-overlay">
+            <span class="cert-view-icon">👁</span>
+            <span class="cert-view-txt">Ver Certificado</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-name">AWS Cloud Developing</div>
+          <p class="cert-desc">Formação voltada para desenvolvimento de aplicações em nuvem AWS.</p>
+        </div>
+      </div>
+      <div class="cert-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200" onclick="openCert('architecting')">
+        <div class="cert-img">
+          <img class="cert-photo" id="cert-thumb-architecting" src="assets/img/cert-architecting.jpg" alt="AWS Cloud Architecting" onerror="this.style.display='none';document.getElementById('cert-emoji-architecting').style.display='block'"/>
+          <span id="cert-emoji-architecting" style="display:none">🏗️</span>
+          <div class="cert-img-overlay">
+            <span class="cert-view-icon">👁</span>
+            <span class="cert-view-txt">Ver Certificado</span>
+          </div>
+        </div>
+        <div class="cert-body">
+          <div class="cert-name">AWS Cloud Architecting</div>
+          <p class="cert-desc">Formação em arquitetura de soluções em nuvem AWS, com foco em design de sistemas escaláveis e resilientes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stack -->
+  <div class="tab-pane" id="tab-stack">
+    <div class="stack-grid">
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="0"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"/></span><span class="stack-name">HTML5</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="60"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3"/></span><span class="stack-name">CSS3</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="120"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"/></span><span class="stack-name">JavaScript</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="180"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg" alt="Flutter"/></span><span class="stack-name">Flutter</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="240"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dart/dart-original.svg" alt="Dart"/></span><span class="stack-name">Dart</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"/></span><span class="stack-name">Python</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="360"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"/></span><span class="stack-name">Java</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="420"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS" style="filter:invert(1) sepia(1) saturate(3) hue-rotate(5deg) brightness(1.1)"/></span><span class="stack-name">AWS Cloud</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="480"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL"/></span><span class="stack-name">SQL</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="540"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"/></span><span class="stack-name">Linux</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="600"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"/></span><span class="stack-name">Git/GitHub</span></div>
+      <div class="stack-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="660"><span class="stack-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C"/></span><span class="stack-name">C</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CONTACT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<section id="Contact">
+  <div class="sec-header">
+    <h2 class="sec-title" data-aos="fade-down" data-aos-duration="1000">Entre em contato comigo</h2>
+    <p class="sec-sub" data-aos="fade-up" data-aos-duration="1100">Tem alguma dúvida ou oportunidade? Envie-me uma mensagem que responderei em breve.</p>
+  </div>
+
+  <div class="contact-console" data-aos="fade-up" data-aos-duration="1000">
+    <!-- Identity sidebar -->
+    <div class="cc-identity">
+      <div class="cc-id-top">
+        <div class="cc-avatar">W</div>
+        <div>
+          <div class="cc-id-name">Walterdes Júnior</div>
+          <div class="cc-id-role">Software Engineer</div>
+        </div>
+      </div>
+      <div class="status-pill cc-status">
+        <span class="live-dot"></span>
+        <span class="status-text">Disponível para novos projetos</span>
+      </div>
+
+      <div class="cc-channels">
+        <a class="cc-channel" href="https://github.com/WalterdesJunior" target="_blank">
+          <span class="cc-channel-dot"></span>
+          <div class="cc-channel-ico">🐺</div>
+          <div><div class="cc-channel-name">GitHub</div><div class="cc-channel-val">@WalterdesJunior</div></div>
+        </a>
+        <a class="cc-channel" href="mailto:walterdinhojuninho@gmail.com">
+          <span class="cc-channel-dot"></span>
+          <div class="cc-channel-ico">📧</div>
+          <div><div class="cc-channel-name">Email</div><div class="cc-channel-val">walterdinhojuninho@gmail.com</div></div>
+        </a>
+        <a class="cc-channel" href="https://www.linkedin.com/in/walterdes-junior-4a8791313/" target="_blank">
+          <span class="cc-channel-dot"></span>
+          <div class="cc-channel-ico">💼</div>
+          <div><div class="cc-channel-name">LinkedIn</div><div class="cc-channel-val">walterdes-junior</div></div>
+        </a>
+        <a class="cc-channel" href="tel:+5586999460572">
+          <span class="cc-channel-dot"></span>
+          <div class="cc-channel-ico">📱</div>
+          <div><div class="cc-channel-name">Telefone</div><div class="cc-channel-val">(86) 99946-0572</div></div>
+        </a>
+        <div class="cc-channel cc-channel--static">
+          <span class="cc-channel-dot"></span>
+          <div class="cc-channel-ico">📍</div>
+          <div><div class="cc-channel-name">Localização</div><div class="cc-channel-val">Teresina, Piauí — Brasil</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Single switchable panel -->
+    <div class="cc-panel">
+      <div class="cc-switch">
+        <div class="cc-switch-thumb" id="cc-switch-thumb"></div>
+        <button class="cc-switch-btn active" onclick="switchContact('msg',this)">✉ Mensagem</button>
+        <button class="cc-switch-btn" onclick="switchContact('comments',this)">💬 Comentários <span class="cc-count" id="cc-comment-count">1</span></button>
+      </div>
+
+      <div class="cc-pane active" id="cc-pane-msg">
+        <div class="field-wrap" data-aos="fade-up" data-aos-delay="100">
+          <input id="fn" class="field" type="text" placeholder="Seu Nome" required/>
+          <span class="field-icon">👤</span>
+        </div>
+        <div class="field-wrap" data-aos="fade-up" data-aos-delay="200">
+          <input id="fe" class="field" type="email" placeholder="Seu E-mail" required/>
+          <span class="field-icon">✉</span>
+        </div>
+        <div class="field-wrap" data-aos="fade-up" data-aos-delay="300">
+          <textarea id="fm" class="field" placeholder="Sua Mensagem" required></textarea>
+          <span class="field-icon" style="top:14px">💬</span>
+        </div>
+        <button class="submit-btn" id="send-btn" onclick="sendMsg()" data-aos="fade-up" data-aos-delay="400">
+          ✈ Enviar Mensagem
+        </button>
+      </div>
+
+      <div class="cc-pane" id="cc-pane-comments">
+        <div class="field-wrap">
+          <input id="cn" class="field" type="text" placeholder="Seu Nome"/>
+          <span class="field-icon">👤</span>
+        </div>
+        <div class="field-wrap">
+          <textarea id="ct" class="field" placeholder="Seu Comentário" style="height:100px"></textarea>
+          <span class="field-icon" style="top:14px">💬</span>
+        </div>
+        <button class="submit-btn" onclick="postComment()" style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:#e2e8f0;margin-bottom:8px">
+          Post Comment
+        </button>
+
+        <div class="comments-list" id="comments-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━ CERT MODAL ━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="cert-modal" class="cmodal-overlay">
+  <button class="cmodal-close" onclick="closeCert()" aria-label="Fechar">✕</button>
+  <div class="cmodal-img-wrap">
+    <img id="cmodal-img" src="" alt="Certificado"/>
+    <div class="cmodal-placeholder" id="cmodal-placeholder" style="display:none">
+      <span class="ph-icon">📄</span>
+      <p>Imagem do certificado ainda não adicionada.</p>
+      <p>Salve o arquivo em: <code id="cmodal-path"></code></p>
+    </div>
+  </div>
+  <div class="cmodal-info">
+    <div>
+      <div class="cmodal-name" id="cmodal-name"></div>
+      <div class="cmodal-issuer" id="cmodal-issuer"></div>
+    </div>
+    <div class="cmodal-actions">
+      <a id="cmodal-download" class="cmodal-btn" download>⬇ Download</a>
+    </div>
+  </div>
+</div>
+
+<!-- ━━ PROJECT MODAL ━━━━━━━━━━━━━━━━━━━━━━ -->
+<div id="proj-modal" class="pmodal-overlay">
+  <div class="pmodal-box">
+    <div class="pmodal-close-row">
+      <button class="pmodal-close" onclick="closeProject()" aria-label="Fechar">✕</button>
+    </div>
+    <div class="pmodal-content">
+      <div class="pmodal-split">
+        <div class="pmodal-col-info">
+          <div class="pmodal-tags" id="pmodal-tags"></div>
+          <h2 class="pmodal-title" id="pmodal-title"></h2>
+          <div class="pmodal-divider"></div>
+          <p class="pmodal-desc" id="pmodal-desc"></p>
+
+          <div class="pmodal-stats">
+            <div class="pmodal-stat">
+              <span class="pmodal-stat-icon">💻</span>
+              <div class="pmodal-stat-text"><strong id="pmodal-stat-tech">0</strong><small>Tecnologias</small></div>
+            </div>
+            <div class="pmodal-stat">
+              <span class="pmodal-stat-icon">⭐</span>
+              <div class="pmodal-stat-text"><strong id="pmodal-stat-feat">0</strong><small>Funcionalidades</small></div>
+            </div>
+          </div>
+
+          <div id="pmodal-repo-wrap" class="pmodal-actions" style="display:flex;gap:10px;flex-wrap:wrap">
+            <a id="pmodal-demo" href="#" target="_blank" class="pmodal-btn" hidden>🌐 Ver Site ↗</a>
+            <a id="pmodal-repo" href="#" target="_blank" class="pmodal-btn" hidden>⌨ Ver no GitHub ↗</a>
+          </div>
+
+          <div class="pmodal-tech-wrap">
+            <div class="pmodal-section-label">🛠 Tecnologias Usadas</div>
+            <div class="pmodal-tech-pills" id="pmodal-tech"></div>
+          </div>
+        </div>
+
+        <div class="pmodal-col-visual">
+          <div class="pmodal-hero" id="pmodal-hero">
+            <span class="pmodal-hero-emoji" id="pmodal-emoji"></span>
+            <img class="pmodal-hero-img" id="pmodal-hero-img" alt="" hidden/>
+            <video class="pmodal-hero-video" id="pmodal-hero-video" muted loop playsinline preload="none" hidden></video>
+            <div class="pmodal-hero-trio" id="pmodal-hero-trio" hidden>
+              <div class="trio-phone trio-phone--side"><div class="phone-frame-screen"><img id="pmodal-trio-1" alt=""/></div></div>
+              <div class="trio-phone trio-phone--center"><div class="phone-frame-screen"><img id="pmodal-trio-2" alt=""/></div></div>
+              <div class="trio-phone trio-phone--side"><div class="phone-frame-screen"><img id="pmodal-trio-3" alt=""/></div></div>
+            </div>
+          </div>
+          <div class="pmodal-features-wrap">
+            <div class="pmodal-section-label">⭐ Principais Funcionalidades</div>
+            <ul class="pmodal-features" id="pmodal-features"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="pmodal-gallery-wrap">
+        <div class="pmodal-section-label">📸 Screenshots</div>
+        <div class="pmodal-gallery" id="pmodal-gallery"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div id="proj-lightbox" class="plightbox">
+  <button class="plightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="screenshot ampliado"/>
+</div>
+
+<!-- ━━ FOOTER ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<footer>
+  <span>© 2025 Walterdes Júnior — All rights reserved.</span>
+  <span>Made with ❤ in Teresina, PI</span>
+  <a href="#Home" class="foot-back">↑ Voltar ao topo</a>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
