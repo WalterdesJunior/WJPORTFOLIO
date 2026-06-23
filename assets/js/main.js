@@ -65,23 +65,6 @@ document.querySelectorAll('.lazy-video').forEach(v => lazyVideoObserver.observe(
   setTimeout(typeChar, 500);
 })();
 
-/* ━━ CURSOR ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-const CUR = document.getElementById('cur'), RING = document.getElementById('cur-r');
-let mx=0, my=0, rx=0, ry=0;
-document.addEventListener('mousemove', e => {
-  mx = e.clientX; my = e.clientY;
-  CUR.style.transform = `translate3d(${mx}px,${my}px,0) translate(-50%,-50%)`;
-}, { passive: true });
-(function tick() {
-  rx += (mx-rx)*.1; ry += (my-ry)*.1;
-  RING.style.transform = `translate3d(${rx}px,${ry}px,0) translate(-50%,-50%)`;
-  requestAnimationFrame(tick);
-})();
-document.querySelectorAll('a,button,.proj-card,.cert-card,.stack-card,.metric-item,.ptab').forEach(el => {
-  el.addEventListener('mouseenter', () => document.body.classList.add('cg'));
-  el.addEventListener('mouseleave', () => document.body.classList.remove('cg'));
-});
-
 /* ━━ BLOB PARALLAX ━━━━━━━━━━━━━━━━━━━━━━━ */
 const blobs = [
   { el: document.getElementById('blob1'), ix: -80, iy: -40 },
